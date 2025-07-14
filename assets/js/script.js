@@ -12,7 +12,19 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+sidebarBtn.addEventListener("click", function () { 
+  elementToggleFunc(sidebar);
+  const spanText = sidebarBtn.querySelector("span");
+  const icon = sidebarBtn.querySelector("ion-icon");
+
+  if (sidebar.classList.contains("active")) {
+    spanText.innerText = "Hide Contacts";
+    icon.setAttribute("name", "chevron-up");
+  } else {
+    spanText.innerText = "Show Contacts";
+    icon.setAttribute("name", "chevron-down");
+  }
+ });
 
 
 
